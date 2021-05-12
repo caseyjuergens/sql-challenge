@@ -30,16 +30,22 @@ INNER JOIN employees e ON
 de.emp_no = e.emp_no
 INNER JOIN departments d ON
 de.dept_no = d.dept_no
+
 -------------------------------------------------------
 --5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 SELECT e.first_name, e.last_name, e.sex
 FROM employees e
 WHERE e.first_name = 'Hercules' AND e.last_name LIKE 'B%'
 
-
 --------------------------------------------------------
 --6. List all employees in the Sales department, including their emp #, last name, first name, and department name.
-
+SELECT de.emp_no, e.last_name, e.first_name, d.dept_name
+FROM dept_emp de
+INNER JOIN employees e ON 
+de.emp_no = e.emp_no
+INNER JOIN departments d ON
+de.dept_no = d.dept_no
+WHERE d.dept_name = 'Sales'
 
 
 --------------------------------------------------------
