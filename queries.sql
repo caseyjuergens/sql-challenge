@@ -22,14 +22,14 @@ dm.dept_no = d.dept_no
 INNER JOIN employees e ON
 dm.emp_no = e.emp_no
 
-
-
-
 --------------------------------------------------------
 --4. List the department of each employee with the following information: emp #, last name, first name, and department name.
-
-
-
+SELECT e.emp_no, e.last_name, e.first_name, de.dept_no, d.dept_name
+FROM dept_emp de
+INNER JOIN employees e ON 
+de.emp_no = e.emp_no
+INNER JOIN departments d ON
+de.dept_no = d.dept_no
 -------------------------------------------------------
 --5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
