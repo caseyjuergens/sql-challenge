@@ -1,6 +1,5 @@
 --------------------------------------------------------
 --1. list the details of each employee: emp. #, first name, last name, sex, and salary
--- inner join employees and salaries?
 
 SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
 FROM employees e
@@ -47,10 +46,15 @@ INNER JOIN departments d ON
 de.dept_no = d.dept_no
 WHERE d.dept_name = 'Sales'
 
-
 --------------------------------------------------------
 --7. List all employees in the Sales and Development departments, including their emp #, last name, first name, and department name.
-
+SELECT de.emp_no, e.last_name, e.first_name, d.dept_name
+FROM dept_emp de
+INNER JOIN employees e ON 
+de.emp_no = e.emp_no
+INNER JOIN departments d ON
+de.dept_no = d.dept_no
+WHERE d.dept_name IN ('Sales', 'Development')
 
 
 --------------------------------------------------------
